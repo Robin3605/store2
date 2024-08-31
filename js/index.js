@@ -48,7 +48,7 @@ const products = {
        },
        {
          id: 3,
-         title: "camisa de seda manga larga para caballero",
+         title: "Camisa de seda manga larga para caballero",
          price: 120000,
          img: "https://i.pinimg.com/564x/d9/67/87/d96787323010ca290ad0071f902d479b.jpg",
        },
@@ -92,13 +92,13 @@ const products = {
     chaquetas: [
      {
        id: 1,
-       title: "TChaqueta negra para dama",
+       title: "Chaqueta negra para dama",
        price: 70000,
        img: "https://i.pinimg.com/564x/21/66/65/216665a223bb251ce8b0c6f53135dcf8.jpg",
      },
      {
          id: 2,
-         title: "chaqueta cuerina cafe dama",
+         title: "Chaqueta cuerina cafe dama",
          price: 89000,
          img: "https://i.pinimg.com/564x/60/3a/0f/603a0f35bb9858b8745826d8bc23f1e4.jpg",
        },
@@ -110,7 +110,7 @@ const products = {
        },
        {
          id: 4,
-         title: "Chaqueta roja oara caballero",
+         title: "Chaqueta roja para caballero",
          price: 90000,
          img: "https://i.pinimg.com/564x/47/ea/2b/47ea2bcfd2a442a1c4156e872bf8efc6.jpg",
        },
