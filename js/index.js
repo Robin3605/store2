@@ -2,6 +2,56 @@ const carts = document.getElementById('cart');
 const container = document.getElementById('container');
 const cartContainer = document.getElementById('cartContainer');
 
+document.addEventListener('DOMContentLoaded', () => {
+  const heading = document.getElementById("h1");
+  const text = heading.innerText;
+  heading.innerHTML = "";
+  [...text].forEach((letter, index) => {
+    const span = document.createElement("span");
+    span.innerText = letter; 
+    heading.appendChild(span); 
+    gsap.from(span, {
+      duration: 0.5, 
+      y: 20, 
+      opacity: 0, 
+      ease: "power2.out", 
+      delay: index * 0.1 
+    });
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const heading = document.getElementById("h2");
+  const words = heading.innerText.split(" ");
+  heading.innerHTML = ""; 
+  words.forEach((word, index) => {
+    const span = document.createElement("span");
+    span.innerText = word + " ";
+    heading.appendChild(span); 
+    gsap.from(span, {
+      duration: 0.5,
+      y: 20,
+      opacity: 0, 
+      ease: "power2.out", 
+      delay: index * 0.3 
+    });
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const items = document.querySelectorAll("#ol li");
+  items.forEach((item, index) => {
+    gsap.from(item, {
+      duration: 8, 
+      y: 20, 
+      opacity: 0, 
+      ease: "power2.out", 
+      delay: index * 0.5 
+    });
+  });
+});
+
+
 // Variables para almacenar los productos y el carrito
 let products = [];
 let cart = [];
