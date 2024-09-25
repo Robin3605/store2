@@ -56,14 +56,33 @@ document.addEventListener('DOMContentLoaded', () => {
 let products = [];
 let cart = [];
 
-// Fetch products from JSON file
-fetch('data.json')
-  .then(response => response.json())
-  .then(data => {
-    products = data || [];
+
+// Función asíncrona para cargar los productos
+async function loadProducts() {
+  try {
+    const response = await fetch('data.json');
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    
+    // Programación defensiva: verificar si data es un array
+    if (!Array.isArray(data)) {
+      throw new Error('Data is not an array');
+    }
+    
+    products = data;
     showingProducts(products);
-  })
-  .catch(error => console.error('Error consuming JSON file:', error));
+  } catch (error) {
+    console.error('Error loading products:', error.message);
+    // Manejo de errores: mostrar un mensaje al usuario o cargar productos por defecto
+    products = [];
+    showingProducts(products);
+  }
+}
+
+// Llamar a la función asíncrona
+loadProducts();
 
 // Función para mostrar los productos
 const showingProducts = (products) => {
