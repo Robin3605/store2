@@ -87,16 +87,16 @@ loadProducts();
 // Función para mostrar los productos
 const showingProducts = (products) => {
   container.innerHTML = ''; 
-  products.forEach((product) => {
+  products.forEach(({ img, title, price, id }) => {
     const productHTML = `
       <div class="w-85 h-100 gap-9 mx-3 my-9 border border-gray-300 shadow-lg rounded-lg p-4 flex flex-col">
         <div class="flex-shrink-0">
-          <img src="${product.img}" alt="" class="object-cover w-48 h-48 " />
+          <img src="${img}" alt="" class="object-cover w-48 h-48 " />
         </div>
         <div class="flex-auto p-2">
-          <h1 class="flex-auto text-lg font-semibold text-slate-200">${product.title}</h1>
-          <div class="text-lg font-semibold text-slate-200">${product.price}</div>
-          <button class="addToCart h-10 px-6 font-semibold rounded-md border border-slate-200 text-slate-200 hover:bg-white hover:text-black" data-id="${product.id}">
+          <h1 class="flex-auto text-lg font-semibold text-slate-200">${title}</h1>
+          <div class="text-lg font-semibold text-slate-200">${price}</div>
+          <button class="addToCart h-10 px-6 font-semibold rounded-md border border-slate-200 text-slate-200 hover:bg-white hover:text-black" data-id="${id}">
             Add to cart
           </button>
         </div>
